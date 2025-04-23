@@ -1,0 +1,31 @@
+#include <stdio.h>
+#include<stdlib.h>
+#include<time.h>
+
+struct compu{
+    int velocidad;
+    int anio;
+    int cantidad_nucleos;
+    char *tipo_cpu; //apunta a cadena de caracteres
+}typedef compu;
+
+//PCs
+void listarPcs (struct compu pcs[], int cantidad);
+void mostrarMasVieja(struct compu pcs[], int cantidad);
+void mostrarMasVeloz(struct compu pcs[], int cantidad);
+
+int main(){
+    srand(time(NULL)); //para generar las caracteristicas de 5 PCs
+    char tipos[6][10] = {"Intel", "AMD", "Celeron", "Athlon", "Core","Pentium"};
+    compu pc[5]; //arreglo de 5 PCs
+    for (int i = 0; i < 5; i++){
+        pc[i].velocidad = 1 + rand() % 3;
+        pc[i].anio = 2015 + rand() % 10;
+        pc[i].cantidad_nucleos = 1  + rand() % 8;
+        pc[i].tipo_cpu = tipos[rand()%6]; //tipo_cpu al ser puntero solo tengo que dirigirla a una de los strings de tipos con su direccion de memoria 
+    }
+    
+
+
+    return 0;
+}
