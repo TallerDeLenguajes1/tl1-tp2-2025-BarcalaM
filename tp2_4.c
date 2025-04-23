@@ -16,9 +16,10 @@ void mostrarMasVeloz(struct compu pcs[], int cantidad);
 
 int main(){
     srand(time(NULL)); //para generar las caracteristicas de 5 PCs
+    int cantidad=5;
     char tipos[6][10] = {"Intel", "AMD", "Celeron", "Athlon", "Core","Pentium"};
     compu pc[5]; //arreglo de 5 PCs
-    for (int i = 0; i < 5; i++){
+    for (int i = 0; i < cantidad; i++){
         pc[i].velocidad = 1 + rand() % 3;
         pc[i].anio = 2015 + rand() % 10;
         pc[i].cantidad_nucleos = 1  + rand() % 8;
@@ -28,4 +29,14 @@ int main(){
 
 
     return 0;
+}
+
+void listarPcs (struct compu pcs[], int cantidad){
+    for (int i = 0; i < cantidad; i++){
+        printf("PC %d\n", i+1);
+        printf("Velocidad de la PC: %d\n", pcs[i].velocidad);
+        printf("Anio de la PC: %d\n", pcs[i].anio);
+        printf("Cantidad de nucleos: %d\n", pcs[i].cantidad_nucleos);
+        printf("Tipo de CPU: %s\n", pcs[i].tipo_cpu);
+    }   
 }
