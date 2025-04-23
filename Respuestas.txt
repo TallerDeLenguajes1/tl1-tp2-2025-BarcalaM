@@ -1,0 +1,9 @@
+### ¿Puede ver el archivo tp2_1_2.c? ¿Por qué?
+**No se podia visualizar el archivo ya que al parecer lo habia creado en la 
+rama Opcion_2, entonces al cambiar a main es como que ese archivo nunca estuvo
+ahi.**
+### En VSCode vuelva al “Source Control” ¿Qué diferencias nota?
+**La o las diferencias que se pueden ver es que antes del merge solo se veian 
+archivos de las respectivas ramas, en cambio luego del merge el Source Control
+muestra que los dos cambios se unieron. Es bastante didactico el grafico antes
+y despues del merge, por lo que se puede ver notablemente que hubo cambios**
