@@ -26,8 +26,9 @@ int main(){
         pc[i].tipo_cpu = tipos[rand()%6]; //tipo_cpu al ser puntero solo tengo que dirigirla a una de los strings de tipos con su direccion de memoria 
     }
     
-
-
+    //mostrar las funciones 
+    listarPcs(pc, cantidad);
+    mostrarMasVieja(pc, cantidad);
     return 0;
 }
 
@@ -39,4 +40,19 @@ void listarPcs (struct compu pcs[], int cantidad){
         printf("Cantidad de nucleos: %d\n", pcs[i].cantidad_nucleos);
         printf("Tipo de CPU: %s\n", pcs[i].tipo_cpu);
     }   
+}
+
+void mostrarMasVieja(struct compu pcs[], int cantidad){
+    int aux = 0;    //para poder identificar el año mas viejo de los num generados
+    for (int i = 0; i < cantidad; i++){
+        if (pcs[i].anio < pcs[aux].anio){
+            aux = i;
+        }
+    }
+    printf("\nPC MAS VIEJA\n");
+    printf("\nPC mas vieja (PC %d):\n", aux + 1);
+    printf("Velocidad: %d GHz\n", pcs[aux].velocidad);
+    printf("Anio: %d\n", pcs[aux].anio);
+    printf("Nucleos: %d\n", pcs[aux].cantidad_nucleos);
+    printf("Tipo de CPU: %s\n\n", pcs[aux].tipo_cpu);
 }
